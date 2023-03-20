@@ -1,0 +1,95 @@
+﻿@model innov_web.Models.VM.TestVM
+<div class="container">
+
+    <h2>Test EndPoint</h2>
+    @if(@Model.Paramters.Count() > 0) {<h2>With Paramters</h2>
+    }
+    <form asp-action="TestEndPoint">
+        <br />
+        <div class="container border p-3">
+            <hr />
+
+            <div class="row">
+                <p id="count" style="display:none" class="form-control" > @Model.Paramters.Count() </p>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @foreach(var item in Model.Paramters)
+                {
+                    <div class="col-2">
+                        <label  class="control-label pt-2" style="font-size:20px;">@item.Name</label>
+                    </div>
+                    <div class="col-10 pb-3">
+                        <input asp-for="@item.Name" class="form-control" />
+                        <span asp-validation-for="@item.Name" class="text-danger"></span>
+                    </div>
+
+                }
+              
+                <div class="col-5">
+                    <a id="test" href="javascript:void(0)" onclick="Remove()" class="btn btn-success">@Model.Verb.Type</a>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    function Remove(name) {
+
+        var type = document.getElementById("test").textContent;
+        var count = document.getElementById("count").textContent;
+        if (type == "GET") {
+            if(count>0){
+                $.ajax({
+                    url: 'https://localhost:7132/api/TestEndPoint/GetByParams',
+                    type: 'GET',
+                    success: function (data) {
+                        alert(data)
+
+                    }
+                })
+            }
+            else{
+                $.ajax({
+                    url: 'https://localhost:7132/api/TestEndPoint',
+                    type: 'GET',
+                    success: function (data) {
+                        alert(data)
+
+                    }
+                })
+            }
+         
+        }
+        else if (type == "POST"){
+             $.ajax({
+                url: 'https://localhost:7132/api/TestEndPoint',
+                type: 'POST',
+                success: function (data) {
+                    alert(data)
+
+                }
+            })
+        }
+        else if (type == "PUT") {
+            $.ajax({
+                url: 'https://localhost:7132/api/TestEndPoint',
+                type: 'PUT',
+                success: function (data) {
+                    alert(data)
+
+                }
+            })
+        }
+        else  {
+            $.ajax({
+                url: 'https://localhost:7132/api/TestEndPoint',
+                type: 'DELETE',
+                success: function (data) {
+                    alert(data)
+
+                }
+            })
+        }
+       
+    }
+</script>

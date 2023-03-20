@@ -1,0 +1,109 @@
+﻿@model innov_web.Models.VM.CreateVerbVM
+
+<form asp-action="VerbCreate" >
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Create End Point</h1>
+        <hr />
+
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="Verb.Name" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Verb.Name" class="form-control" />
+                <span asp-validation-for="Verb.Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Verb.Type" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <select asp-for="Verb.Type" class="form-select" >
+                    <option disabled selected>--Select Type--</option>
+                    <option>GET</option>
+                    <option>POST</option>
+                    <option>PUT</option>
+                    <option>DELETE</option>
+                </select>
+                <span asp-validation-for="Verb.Type" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Verb.GroupId" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <select asp-for="Verb.GroupId" class="form-select" asp-items="@Model.GroupList">
+                    <option disabled selected>--Select Group--</option>
+                </select>
+                <span asp-validation-for="Verb.GroupId" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="Verb.TableName" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <select asp-for="Verb.TableName" class="form-select" asp-items="@Model.TableList">
+                    <option disabled selected>--Select Table--</option>
+                </select>
+                <span asp-validation-for="Verb.TableName" class="text-danger"></span>
+            </div>
+           @* <div class="col-2">
+                <label asp-for="Verb.TableName" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Verb.TableName" class="form-control" />
+                <span asp-validation-for="Verb.TableName" class="text-danger"></span>
+            </div>*@
+            <div class="col-2">
+                <label asp-for="Verb.QueryStatement" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Verb.QueryStatement" class="form-control" />
+                <span asp-validation-for="Verb.QueryStatement" class="text-danger"></span>
+            </div>
+
+           @* <div class="col-2">
+                <label asp-for="CheckParams" class="control-label pt-2" style="font-size:20px;">Check Params</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="CheckParams" type="checkbox"  id="checkParams"  />
+            </div>
+            <div id="params" style="display:none">
+                <div class="col-2">
+                    <label asp-for="Verb.Paramters[0].Name" class="control-label pt-2" style="font-size:20px;">Param1</label>
+                </div>
+                <div class="col-10 pb-3">
+                    <input asp-for="Verb.Paramters[0].Name" class="form-control" />
+                </div>
+                <div class="col-2">
+                    <label asp-for="Verb.Paramters[1].Name" class="control-label pt-2" style="font-size:20px;">Param2</label>
+                </div>
+                <div class="col-10 pb-3">
+                    <input asp-for="Verb.Paramters[1].Name" class="form-control" />
+                </div>
+            </div>*@
+           
+            <div class="col-5">
+                <input type="submit" value="Submit" class="btn btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+   
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    //$(function () {
+    //    $("#checkParams").on("click", function () {
+    //        $("#params").toggle(this.checked);
+    //    });
+    //});
+</script>
+

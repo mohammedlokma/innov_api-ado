@@ -1,0 +1,32 @@
+﻿@model innov_web.Models.DTO.GroupVerbsDto
+<div class="container">
+
+    <a asp-controller="Verb" asp-action="VerbCreate" asp-route-groupId="@Model.Id" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New End Point</a>
+    <br />
+    <h2>@Model.GroupName -- End Points</h2>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Test</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.verbsDto)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Type</td>
+                    <td><a class="btn btn-success" href="@($"https://localhost:7132{item.Link}")" target=" _blank" >Test</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+   
+</script>

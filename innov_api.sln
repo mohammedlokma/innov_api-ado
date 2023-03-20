@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "innov_api", "innov_api\innov_api.csproj", "{9E0F7862-B916-405C-85B5-7672F10639CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "innov_web", "innov_web\innov_web.csproj", "{971DD789-A280-4D13-A732-A32D9CF1731E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E0F7862-B916-405C-85B5-7672F10639CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0F7862-B916-405C-85B5-7672F10639CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0F7862-B916-405C-85B5-7672F10639CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0F7862-B916-405C-85B5-7672F10639CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{971DD789-A280-4D13-A732-A32D9CF1731E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{971DD789-A280-4D13-A732-A32D9CF1731E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{971DD789-A280-4D13-A732-A32D9CF1731E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{971DD789-A280-4D13-A732-A32D9CF1731E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE83F60E-6CBF-4C9F-B412-D1575A9C073A}
+	EndGlobalSection
+EndGlobal

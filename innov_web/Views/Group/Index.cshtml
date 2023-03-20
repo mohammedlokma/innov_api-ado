@@ -1,0 +1,30 @@
+﻿
+@model IEnumerable<innov_web.Models.DTO.GroupDto>
+<div class="container">
+    <a asp-controller="Group" asp-action="GroupCreate" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New Group</a>
+
+
+    <h2>Groups</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>End Points</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td><a class="btn btn-primary" asp-controller="Group" asp-action="GroupVerbs" asp-route-groupId="@item.Id">End Points</a></td>
+                  
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+   
+</script>
